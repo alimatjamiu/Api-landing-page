@@ -5,12 +5,12 @@
   --foreground: #171717;
 }
 
-@theme inline {
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -24,3 +24,35 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media (width < 1024px) {
+  .boost {
+    background-image: url('/images/bg-boost-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .shorten{
+    background-image: url("/images/bg-shorten-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+} 
+@media (width > 1023px) {
+ 
+  .boost {
+    background-image: url('/images/bg-boost-desktop.svg');
+       background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.shorten{
+  background-image: url("/images/bg-shorten-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+.shorten{
+  background-color: hsl(255, 11%, 22%);
+}
+      }
