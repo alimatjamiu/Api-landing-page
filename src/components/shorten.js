@@ -8,20 +8,7 @@ export default function LinkShortener() {
   const [isLoading, setIsLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
 
-  // Load saved links from localStorage when component mounts
-  useEffect(() => {
-    const savedLinks = localStorage.getItem('shortenedLinks');
-    if (savedLinks) {
-      setShortenedLinks(JSON.parse(savedLinks));
-    }
-  }, []);
-
-  // Save links to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem('shortenedLinks', JSON.stringify(shortenedLinks));
-  }, [shortenedLinks]);
-
-  // Reset copied status after 2 seconds
+  
   useEffect(() => {
     if (copiedIndex !== null) {
       const timer = setTimeout(() => {
@@ -65,7 +52,7 @@ export default function LinkShortener() {
       
       const newLink = {
         original: url,
-       shortened: `/api/v1/shorten${randomShortCode}`,
+       shortened: `https://api.tinyurl.com/create${randomShortCode}`,
 
         timestamp: new Date().getTime()
       };
@@ -100,7 +87,7 @@ export default function LinkShortener() {
   <div className='bg-[#bfbfbf]'>
       <div className="  flex flex-col items-center container mx-auto   ">
       {/* URL Input Section - Matches the dark purple background in mockups */}
-      <div className="shorten   rounded-lg px-8 py-4 mb-6 shadow-md lg:w-[70%] -mt-10">
+      <div className="shorten   rounded-lg px-8 py-4 mb-6 shadow-md lg:w-[70%] -mt-10 lg:py-4">
         <div className="relative">
           <div className="flex flex-col sm:flex-row gap-2">
             <div className="relative flex-grow">
@@ -135,22 +122,21 @@ export default function LinkShortener() {
       {shortenedLinks.length > 0 && (
         <div className="w-full space-y-4">
           {shortenedLinks.map((link, index) => (
-            <div key={index} className="bg-white rounded-md shadow-md overflow-hidden">
+            <div key={index} className="bg-white rounded-md shadow-md overflow-hidden w-[68%] lg:w-[70%] mx-auto flex flex-col lg:flex-row lg:justify-between justify-center items-center">
               <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between border-b sm:border-b-0">
                 <p className="text-gray-700 truncate max-w-full sm:max-w-md font-medium">{link.original}</p>
               </div>
-              <div className="bg-gray-50 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <p className="text-teal-500 font-medium">{link.shortened}</p>
                 <button
                   onClick={() => copyToClipboard(link.shortened, index)}
                   className={`${
                     copiedIndex === index ? 'bg-indigo-900' : 'bg-teal-400 hover:bg-teal-500'
-                  } text-white font-bold py-2 px-6 rounded-md transition-colors duration-200 min-w-20 text-center`}
+                  } text-white font-bold py-2 px-6 lg:mx-6 rounded-md transition-colors duration-200 w-full  lg:min-w-20 text-center`}
                 >
                   {copiedIndex === index ? 'Copied!' : 'Copy'}
                 </button>
               </div>
-            </div>
+            
           ))}
         </div>
       )}

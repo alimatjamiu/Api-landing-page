@@ -1,9 +1,9 @@
 import Navbar from "../layout/navBar";
 import Hero from "../components/hero";
 import Advance from "../components/advance";
-import Footer from "../layout/footer"
+import Footer from "../layout/footer";
 import Boost from "../components/boost";
-import Shorten from "../components/shorten"
+import Shortens from "../components/shortens"
 
 export default function Home() {
 
@@ -11,7 +11,7 @@ export default function Home() {
     <div className="w-full ">
     <Navbar />
     <Hero />
-    <Shorten/>
+    <Shortens/>
     <Advance />
     <Boost/>
     <Footer/>

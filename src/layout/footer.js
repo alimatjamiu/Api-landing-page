@@ -43,11 +43,11 @@ export default function Footer() {
         </div>
        
      
-         <div className="flex gap-4  justify-center">
-            <a href="#"><Image src={FaceBook} alt="Facebook" width={24} height={24} /></a>
-            <a href="#"><Image src={Twitter} alt="Twitter" width={24} height={24} /></a>
-            <a href="#"><Image src={Pinterest} alt="Pinterest" width={24} height={24} /></a>
-            <a href="#"><Image src={Instagram} alt="Instagram" width={24} height={24} /></a>
+         <div className="flex gap-4  justify-center  items-center lg:items-start ">
+            <a className="facebook" href="#"><Image src={FaceBook} alt="Facebook" width={24} height={24} /></a>
+            <a className="twitter" href="#"><Image src={Twitter} alt="Twitter" width={24} height={24} /></a>
+            <a className="pinterest" href="#"><Image src={Pinterest} alt="Pinterest" width={24} height={24} /></a>
+            <a className="instagram" href="#"><Image src={Instagram} alt="Instagram" width={24} height={24} /></a>
         </div>
       </div>
       
