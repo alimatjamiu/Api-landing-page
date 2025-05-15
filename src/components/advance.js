@@ -8,7 +8,7 @@ export default function Advance() {
     <div className="bg-[#bfbfbf] py-8">
       <div className="flex flex-col items-center justify-center py-2 text-center  ">
         <h1 className="text-xl font-semibold lg:text-2xl text-[#3b3054]">Advance Statistics</h1>
-        <p className="lg:px-20 px-10 text-sm lg:text-md w-[84%] lg:w-[60%] text-[#9e9aa7]">Track how your links are performing across the web with our 
+        <p className=" px-10 text-sm  lg:px-14 w-[84%] lg:w-[40%] text-[#9e9aa7]">Track how your links are performing across the web with our 
   advanced statistics dashboard.</p>
       </div>
       <div className="flex flex-col lg:flex-row justify-center   items-center p-6 lg:px-16 xl:px-20 xl:mx-10 ">
@@ -22,7 +22,7 @@ export default function Advance() {
             <p className="xl:text-base text-sm">Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content."</p>
           </div>
        </div>
-       <div className="w-[8px] h-[50px] lg:w-[50px] lg:h-[4px] bg-[#2acfcf]"></div>
+       <div className="w-[8px] h-[56px] lg:w-[50px] lg:h-[4px] bg-[#2acfcf]"></div>
 
         <div className="bg-white py-4 lg:py-0 lg:mt-14 lg:mx-0 rounded-md  ">
              <div className="rounded-lg p-6 flex flex-col  gap-4  w-full max-w-[80rem] lg:max-w-4xl ">
@@ -34,7 +34,7 @@ export default function Advance() {
   people engage with your content helps inform better decisions.</p>
           </div>
         </div>
-        <div className="w-[8px] h-[50px] lg:w-[50px] lg:h-[4px] bg-[#2acfcf]"></div>
+        <div className="w-[8px] h-[56px] lg:w-[50px] lg:h-[4px] bg-[#2acfcf]"></div>
 
           <div className="bg-white lg:mt-26 py-4 lg:py-0 lg:mx-0 xl:mt-28 rounded-md">
              <div className=" rounded-lg  p-6 flex flex-col  gap-4  w-full max-w-[80rem] lg:max-w-4xl ">

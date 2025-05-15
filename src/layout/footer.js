@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "../../public/images/logo.svg";
+import Logo from "../../public/images/logo copy.svg";
 import FaceBook from "../../public/images/icon-facebook.svg";
 import Twitter from "../../public/images/icon-twitter.svg";
 import Pinterest from "../../public/images/icon-pinterest.svg";
@@ -9,8 +9,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#35323e] text-white p-8  ">
       <div className=" grid grid-cols-1 lg:grid-cols-5 px-16  ">
-        <div className=" ">
-        <Image className="text-white fill-current" src={Logo} alt="logo" width={100} height={100} />
+        <div className="mx-auto lg:mx-0 ">
+          <Image src={Logo} alt="logo" width={80} height={80} className="mb-4" />
+         
       </div>
 
       
@@ -44,10 +45,10 @@ export default function Footer() {
        
      
          <div className="flex gap-4  justify-center  items-center lg:items-start  ">
-            <a className="facebook" href="#"><Image src={FaceBook} alt="Facebook" width={24} height={24} /></a>
-            <a className="twitter" href="#"><Image src={Twitter} alt="Twitter" width={24} height={24} /></a>
-            <a className="pinterest" href="#"><Image src={Pinterest} alt="Pinterest" width={24} height={24} /></a>
-            <a className="instagram" href="#"><Image src={Instagram} alt="Instagram" width={24} height={24} /></a>
+            <a className="hover:bg-[#2acfcf] active:bg-[#2acfcf] hover:rounded-full cursor-pointer" href="#"><Image src={FaceBook} alt="Facebook" width={24} height={24} /></a>
+            <a className="hover:bg-[#2acfcf] active:bg-[#2acfcf] hover:rounded-full cursor-pointer" href="#"><Image src={Twitter} alt="Twitter" width={24} height={24} /></a>
+            <a className="hover:bg-[#2acfcf] active:bg-[#2acfcf] hover:rounded-full cursor-pointer" href="#"><Image src={Pinterest} alt="Pinterest" width={24} height={24} /></a>
+            <a className="hover:bg-[#2acfcf] active:bg-[#2acfcf] hover:rounded-full cursor-pointer" href="#"><Image src={Instagram} alt="Instagram" width={24} height={24} /></a>
         </div>
       </div>
       

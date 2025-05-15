@@ -8,7 +8,18 @@ export default function LinkShortener() {
   const [isLoading, setIsLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
 
- 
+   useEffect(() => {
+    const savedLinks = localStorage.getItem('shortenedLinks');
+    if (savedLinks) {
+      setShortenedLinks(JSON.parse(savedLinks));
+    }
+  }, []);
+
+  // Save links to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('shortenedLinks',JSON.stringify(shortenedLinks));
+  }, [shortenedLinks]);
+
 
   // Reset copied status after 2 seconds
   useEffect(() => {
@@ -90,8 +101,8 @@ export default function LinkShortener() {
   return (
 <div className='bg-[#bfbfbf]'>
       <div className="flex flex-col items-center w-full max-w-4xl mx-auto p-4 ">
-      {/* URL Input Section - Matches the dark purple background in mockups */}
-      <div className="w-full bg-indigo-900 rounded-lg p-4 mb-6 shadow-md shorten -mt-14">
+    
+      <div className="w-full bg-indigo-900 rounded-lg p-4 mb-6 shadow-md shorten -mt-14 py-8 lg:py-10">
         <div className="relative">
           <div className="flex flex-col sm:flex-row gap-2">
             <div className="relative flex-grow">
@@ -114,7 +125,7 @@ export default function LinkShortener() {
             <button
               onClick={shortenUrl}
               disabled={isLoading}
-              className="bg-teal-400 hover:bg-teal-500 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200 disabled:opacity-75 shadow-md"
+              className="bg-teal-400 hover:bg-teal-500 mt-10 lg:mt-0 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200 disabled:opacity-75 shadow-md"
             >
               {isLoading ? 'Shortening...' : 'Shorten It!'}
             </button>
@@ -126,23 +137,22 @@ export default function LinkShortener() {
       {shortenedLinks.length > 0 && (
         <div className="w-full space-y-4">
           {shortenedLinks.map((link, index) => (
-            <div key={index} className="bg-white rounded-md shadow-md overflow-hidden flex flex-col lg
-            flex-row p-2 gap-2 lg:justify-between lg:items-center ">
+            <div key={index} className="bg-white rounded-md shadow-md overflow-hidden flex flex-col lg:flex-row p-2 gap-2 lg:justify-between lg:items-center ">
              
                 <p className="text-gray-700 truncate max-w-full sm:max-w-md font-medium">{link.original}</p>
               
-              {/* <div className="bg-gray-50 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3"> */}
+             
                 <p className="text-teal-500 font-medium">{link.shortened}</p>
                 <button
                   onClick={() => copyToClipboard(link.shortened, index)}
                   className={`${
-                    copiedIndex === index ? 'bg-indigo-900' : 'bg-teal-400 hover:bg-teal-500'
-                  } text-white font-bold py-2 px-6 rounded-md transition-colors duration-200 min-w-20 text-center`}
+                    copiedIndex === index ? 'bg-[#3b3054]' : 'bg-teal-400 hover:bg-teal-500'
+                  } text-white font-bold py-2 px-6  rounded-md transition-colors duration-200 min-w-20 text-center`}
                 >
                   {copiedIndex === index ? 'Copied!' : 'Copy'}
                 </button>
               </div>
-            // </div>
+            
           ))}
         </div>
       )}
