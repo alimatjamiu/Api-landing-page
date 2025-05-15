@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-export default function LinkShortener() {
+export default function Shortens() {
   const [url, setUrl] = useState('');
   const [shortenedLinks, setShortenedLinks] = useState([]);
   const [error, setError] = useState('');
@@ -102,7 +102,7 @@ export default function LinkShortener() {
 <div className='bg-[#bfbfbf]'>
       <div className="flex flex-col items-center w-full max-w-4xl mx-auto p-4 ">
     
-      <div className="w-full bg-indigo-900 rounded-lg p-4 mb-6 shadow-md shorten -mt-14 py-8 lg:py-10">
+      <div className="w-full bg-indigo-900 rounded-lg p-4 mb-6 shadow-md shorten -mt-20 lg:-mt-14 py-8 lg:py-10">
         <div className="relative">
           <div className="flex flex-col sm:flex-row gap-2">
             <div className="relative flex-grow">
@@ -121,11 +121,12 @@ export default function LinkShortener() {
                   {error}
                 </p>
               )}
+
             </div>
             <button
               onClick={shortenUrl}
               disabled={isLoading}
-              className="bg-teal-400 hover:bg-teal-500 mt-10 lg:mt-0 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200 disabled:opacity-75 shadow-md"
+              className="bg-teal-400 hover:bg-teal-500 mt-4 lg:mt-0 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200 disabled:opacity-75 shadow-md"
             >
               {isLoading ? 'Shortening...' : 'Shorten It!'}
             </button>
@@ -140,13 +141,13 @@ export default function LinkShortener() {
             <div key={index} className="bg-white rounded-md shadow-md overflow-hidden flex flex-col lg:flex-row p-2 gap-2 lg:justify-between lg:items-center ">
              
                 <p className="text-gray-700 truncate max-w-full sm:max-w-md font-medium">{link.original}</p>
-              
+              < hr className='lg:hidden'/>
              
-                <p className="text-teal-500 font-medium">{link.shortened}</p>
+                <p className="text-teal-500 font-seibold py-2 lg:py-0">{link.shortened}</p>
                 <button
                   onClick={() => copyToClipboard(link.shortened, index)}
                   className={`${
-                    copiedIndex === index ? 'bg-[#3b3054]' : 'bg-teal-400 hover:bg-teal-500'
+                    copiedIndex === index ? 'bg-[#3b3054]' : 'bg-teal-400 hover:bg-teal-500 '
                   } text-white font-bold py-2 px-6  rounded-md transition-colors duration-200 min-w-20 text-center`}
                 >
                   {copiedIndex === index ? 'Copied!' : 'Copy'}

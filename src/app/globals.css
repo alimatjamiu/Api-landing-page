@@ -61,12 +61,4 @@ body {
   background-color: hsl(257, 27%, 26%);
 }
       }
-          .facebook, .twitter, .pinterest, .instagram {
-      width: 300px;
-      transition: transform 0.3s ease;
-    }
-
-    .facebook, .twitter, .pinterest, .instagram:hover {
-      transform: scale(1.1); 
-      color:red;/* Zoom in on hover */
-    }
+    

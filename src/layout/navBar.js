@@ -10,8 +10,8 @@ export default function Navbar() {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <div className="p-8">
-            <nav className="flex justify-between items-center p-4 bg-white relative lg:mx-22 xl:mx:26 lg:mr-8">
+        <div className=" p-4 lg:p-8">
+            <nav className="flex justify-between items-center py-4 lg:py-0 lg:p-4 bg-white relative lg:mx-22 xl:mx:26 lg:mr-8">
                 
                 <span>
                     <Image className="text-white" src={Short} alt="logo" width={80} height={80} />
@@ -20,13 +20,13 @@ export default function Navbar() {
               
                 <div className="hidden lg:flex justify-between items-center w-full px-10  ">
                     <div className="flex gap-4">
-                        <a className="text-[#9e9aa7] hover:text-black" href="#">Features</a>
-                        <a className="text-[#9e9aa7] hover:text-black" href="#">Pricing</a>
-                        <a className="text-[#9e9aa7] hover:text-black" href="#">Resources</a>
+                        <a className="text-[#9e9aa7] focus:text-black" href="#">Features</a>
+                        <a className="text-[#9e9aa7] focus:text-black" href="#">Pricing</a>
+                        <a className="text-[#9e9aa7] focus:text-black" href="#">Resources</a>
                     </div>
                     <div className="flex gap-6 items-center">
-                        <a href="#" className="px-4 py-2 text-[#9e9aa7] hover:text-black">Login</a>
-                        <a href="#" className="bg-[#2acfcf] text-white px-6  py-1 rounded-full ">Sign Up</a>
+                        <a href="#" className="px-4 py-2 text-[#9e9aa7] focus:text-black">Login</a>
+                        <button className="bg-[#2acfcf] text-white px-6 focus:opacity-20  py-1 rounded-full ">Sign Up</button>
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@ export default function Navbar() {
 
                 
                 {isOpen && (
-                    <div className="flex flex-col gap-4 items-center justify-center absolute top-18 left-0 right-0 bg-[#3b3054] text-white py-10 lg:py-4 rounded-md shadow-lg z-50 lg:hidden">
+                    <div className="flex flex-col gap-4 items-center justify-center absolute top-16 left-0 right-0 bg-[#3b3054] text-white py-10 lg:py-4 rounded-md shadow-lg z-50 lg:hidden mx-4">
                         <a className="font-semibold" href="#">Features</a>
                         <a className="font-semibold" href="#">Pricing</a>
                         <a className="font-semibold" href="#">Resources</a>

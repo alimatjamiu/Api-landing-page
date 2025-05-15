@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#35323e] text-white p-8  ">
       <div className=" grid grid-cols-1 lg:grid-cols-5 px-16  ">
-        <div className="mx-auto lg:mx-0 ">
+        <div className="mx-auto lg:mx-0 pb-2 lg:pb-0 ">
           <Image src={Logo} alt="logo" width={80} height={80} className="mb-4" />
          
       </div>
